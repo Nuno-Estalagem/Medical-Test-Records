@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="544.0" prefWidth="738.0" style="-fx-background-color: #1c3d4d;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sirs_gui.LoginController">
+   <center>
+      <AnchorPane BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="username" layoutX="284.0" layoutY="200.0" promptText="Insert your Username" />
+            <PasswordField fx:id="password" layoutX="284.0" layoutY="261.0" promptText="Insert your Password" />
+            <Button fx:id="button" defaultButton="true" layoutX="342.0" layoutY="325.0" mnemonicParsing="false" onAction="#userLogin" text="Login">
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor></Button>
+            <Label fx:id="wrong" layoutX="285.0" layoutY="179.0" prefHeight="16.0" prefWidth="375.0" textFill="#f20606" />
+            <Label layoutX="333.0" layoutY="491.0" prefHeight="24.0" prefWidth="72.0" text="Hospital25" textAlignment="CENTER" textFill="WHITE" />
+            <ImageView fx:id="userPhoto" fitHeight="35.0" fitWidth="30.0" layoutX="234.0" layoutY="194.0">
+               <image>
+                  <Image url="@../../../../../images/clipart1297398.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="thirdPhoto" fitHeight="78.0" fitWidth="78.0" layoutX="330.0" layoutY="72.0">
+               <image>
+                  <Image url="@../../../../../images/kindpng_3273235.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="lockerPhoto" fitHeight="41.0" fitWidth="33.0" layoutX="233.0" layoutY="252.0">
+               <image>
+                  <Image url="@../../../../../images/pngkit_padlock-icon-png_3331142.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

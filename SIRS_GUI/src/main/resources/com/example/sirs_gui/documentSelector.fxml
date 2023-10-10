@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #1c3d4d;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sirs_gui.DocumentController">
+   <children>
+      <TableView fx:id="table" layoutX="376.0" layoutY="137.0" prefHeight="389.0" prefWidth="739.0">
+        <columns>
+          <TableColumn fx:id="theme" prefWidth="217.0" text="Title" />
+            <TableColumn fx:id="lab" minWidth="0.0" prefWidth="237.0" text="Lab" />
+            <TableColumn fx:id="id" prefWidth="326.0" text="ID" />
+        </columns>
+      </TableView>
+      <Button fx:id="back" defaultButton="true" layoutX="41.0" layoutY="599.0" mnemonicParsing="false" onAction="#goBack" prefHeight="61.0" prefWidth="134.0" text="Go back" />
+      <Button fx:id="view" defaultButton="true" layoutX="1106.0" layoutY="599.0" mnemonicParsing="false" onAction="#viewDocument" prefHeight="61.0" prefWidth="134.0" text="Select Document" />
+      <Label layoutX="41.0" layoutY="137.0" prefHeight="39.0" prefWidth="177.0" text="Person Details" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="nif" layoutX="41.0" layoutY="218.0" prefHeight="39.0" prefWidth="295.0" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="age" layoutX="41.0" layoutY="379.0" prefHeight="39.0" prefWidth="295.0" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="name" layoutX="41.0" layoutY="302.0" prefHeight="39.0" prefWidth="295.0" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

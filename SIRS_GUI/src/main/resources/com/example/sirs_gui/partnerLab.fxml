@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #1c3d4d;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sirs_gui.PartnerLabController">
+   <center>
+      <AnchorPane prefHeight="720.0" prefWidth="1299.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="532.0" layoutY="233.0" prefHeight="55.0" prefWidth="271.0" text=" Documents" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="45.0" />
+               </font>
+            </Label>
+            <Line endX="935.0" layoutX="300.0" layoutY="90.0" startX="-262.0" />
+            <Button fx:id="upload" defaultButton="true" layoutX="603.0" layoutY="446.0" mnemonicParsing="false" onAction="#uploadDocuments" prefHeight="49.0" prefWidth="129.0" text="Upload" />
+            <Label layoutX="593.0" layoutY="32.0" prefHeight="42.0" prefWidth="150.0" text="Hospital25" textFill="WHITE">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="61.0" fitWidth="66.0" layoutX="14.0" layoutY="11.0">
+               <image>
+                  <Image url="@kindpng_3273235.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="role" layoutX="1071.0" layoutY="31.0" prefHeight="44.0" prefWidth="165.0" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

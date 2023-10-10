@@ -1,0 +1,95 @@
+version: '3.8'
+services:
+  quarkus:
+    build:
+      context: ./Quarkus-Group25
+      dockerfile: src/main/docker/Dockerfile.jvm
+    ports:
+      - 9090:9090
+    volumes:
+      - ./keys:/home/jboss
+    networks:
+      quarkus:
+        ipv4_address: 10.7.0.5
+      quarkus-keycloak:
+          ipv4_address: 10.5.0.5
+
+    
+    depends_on:
+        - keycloak 
+        - mongodb
+
+  mongodb:
+        image : mongo:latest
+        container_name: mongodb
+        environment:
+        - PUID=1000
+        - PGID=1000
+        restart: unless-stopped
+        networks:
+          quarkus:
+            ipv4_address: 10.7.0.7
+        
+
+  mysql:
+      image: mysql:5.7
+      volumes:
+        - mysql_data:/var/lib/mysql
+      environment:
+        MYSQL_ROOT_PASSWORD: root
+        MYSQL_DATABASE: keycloak
+        MYSQL_USER: keycloak
+        MYSQL_PASSWORD: password
+      networks:
+        keycloak :
+          ipv4_address: 10.6.0.5
+
+  keycloak:
+      user : root
+      image: quay.io/keycloak/keycloak:latest
+      volumes:
+      - ./Realms:/Realms
+      environment:
+        KEYCLOAK_IMPORT: Realms/RealmshospitalUsers.json -Dkeycloak.profile.feature.upload_scripts=enabled 
+                        -Dkeycloak.migration.action=import
+                        -Dkeycloak.migration.provider=singleFile -Dkeycloak.migration.file=Realms/RealmshospitalUsers.json
+                        -Dkeycloak.migration.strategy=OVERWRITE_EXISTING        
+        DB_VENDOR: MYSQL
+        DB_ADDR: mysql
+        DB_DATABASE: keycloak
+        DB_USER: keycloak
+        DB_PASSWORD: password
+      depends_on:
+        - mysql
+      networks:
+        quarkus-keycloak:
+          ipv4_address: 10.5.0.6
+        keycloak :
+          ipv4_address: 10.6.0.6
+
+volumes:
+  mysql_data:
+      driver: local
+
+networks:
+  quarkus:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 10.7.0.0/16
+         gateway: 10.7.0.1
+
+  keycloak :
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 10.6.0.0/16
+         gateway: 10.6.0.1
+
+  quarkus-keycloak:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 10.5.0.0/16
+         gateway: 10.5.0.1
+

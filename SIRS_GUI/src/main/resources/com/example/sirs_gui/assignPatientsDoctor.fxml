@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #1c3d4d;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sirs_gui.DoctorAssignController">
+   <children>
+      <TableView fx:id="table" layoutX="143.0" layoutY="166.0" prefHeight="389.0" prefWidth="931.0">
+        <columns>
+          <TableColumn fx:id="nif" prefWidth="239.0" text="Nif" />
+          <TableColumn fx:id="name" prefWidth="463.0" text="Name" />
+            <TableColumn fx:id="age" minWidth="0.0" prefWidth="228.0" text="Age" />
+        </columns>
+      </TableView>
+      <Button fx:id="assign" defaultButton="true" layoutX="916.0" layoutY="597.0" mnemonicParsing="false" onAction="#assignPatient" prefHeight="58.0" prefWidth="154.0" text="Assign Patient" />
+      <Label layoutX="223.0" layoutY="69.0" prefHeight="58.0" prefWidth="770.0" text="Click on the patient, then click assign to assign the patient to you" textFill="WHITE">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <Button fx:id="back" defaultButton="true" layoutX="45.0" layoutY="631.0" mnemonicParsing="false" onAction="#goBack" prefHeight="61.0" prefWidth="134.0" text="Go back" />
+   </children>
+</AnchorPane>

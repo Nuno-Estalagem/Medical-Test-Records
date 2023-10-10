@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #1c3d4d;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sirs_gui.UploadDocument">
+   <bottom>
+      <AnchorPane prefHeight="720.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
+         <children>
+            <Line endX="947.0" layoutX="300.0" layoutY="90.0" startX="-265.0" />
+            <Label layoutX="572.0" layoutY="26.0" prefHeight="42.0" prefWidth="152.0" text="Hospital25" textFill="WHITE">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="78.0" fitWidth="89.0" layoutX="8.0" layoutY="8.0">
+               <image>
+                  <Image url="@kindpng_3273235.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="upload" defaultButton="true" layoutX="591.0" layoutY="652.0" mnemonicParsing="false" onAction="#uploadDocument" prefHeight="48.0" prefWidth="114.0" text="Upload!">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="back" defaultButton="true" layoutX="35.0" layoutY="621.0" mnemonicParsing="false" onAction="#goBack" prefHeight="61.0" prefWidth="134.0" text="Go back" />
+            <TextField fx:id="name" layoutX="445.0" layoutY="258.0" prefHeight="24.0" prefWidth="407.0" />
+            <TextField fx:id="theme" layoutX="445.0" layoutY="347.0" prefHeight="24.0" prefWidth="407.0" />
+            <TextField fx:id="nif" layoutX="444.0" layoutY="169.0" prefHeight="24.0" prefWidth="407.0" />
+            <Label layoutX="445.0" layoutY="119.0" prefHeight="42.0" prefWidth="109.0" text="Patient NIF" textFill="WHITE">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="445.0" layoutY="208.0" prefHeight="42.0" prefWidth="130.0" text="Patient name" textFill="WHITE">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="445.0" layoutY="297.0" prefHeight="42.0" prefWidth="143.0" text="Record Theme" textFill="WHITE">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="446.0" layoutY="468.0" prefHeight="42.0" prefWidth="129.0" text="Observations" textFill="WHITE">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="445.0" layoutY="389.0" prefHeight="42.0" prefWidth="120.0" text="Record Title" textFill="WHITE">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <TextField fx:id="title" layoutX="445.0" layoutY="431.0" prefHeight="24.0" prefWidth="407.0" />
+            <TextArea fx:id="observations" layoutX="443.0" layoutY="510.0" prefHeight="129.0" prefWidth="410.0" />
+         </children>
+      </AnchorPane>
+   </bottom>
+</BorderPane>
